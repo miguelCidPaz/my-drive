@@ -1,5 +1,6 @@
 const app = require('express')();
 const { PORT } = require('./config');
+require('./database/initDB')();
 
 app.use(require('body-parser').json());
 
