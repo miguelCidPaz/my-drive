@@ -15,6 +15,7 @@ const initDB = async () => {
                 email VARCHAR(50),
                 biography VARCHAR(255),
                 photo VARCHAR(255),
+                user_active INTEGER,
                 creation_date DATE,
                 PRIMARY KEY (id)
             )
