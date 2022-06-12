@@ -9,6 +9,7 @@ const insertUserPruebas = async () => {
             password: '1234',
             email: 'miguel.cid.paz@gmail.com',
             biography: 'soy el user de pruebas',
+            user_active: 1,
             photo: ''
         }
 

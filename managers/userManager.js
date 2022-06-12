@@ -77,7 +77,7 @@ const login = async ({ username, password }) => {
 
 const modifyUser = async (file, user) => {
     try {
-        const { id, username, password, email, biography, photo } = user
+        const { id, username, password, email, biography, photo, user_active } = user
 
         if (file) {
             const { filename } = file
@@ -93,7 +93,8 @@ const modifyUser = async (file, user) => {
             username: username | userdb.username,
             password: password | userdb.password,
             email: email | userdb.email,
-            biography: biography | userdb.biography
+            biography: biography | userdb.biography,
+            user_active: user_active === undefined ? 1 : userdb.user_active
         }
 
         await updateUser(newUser)
