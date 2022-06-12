@@ -1,4 +1,6 @@
+const initiateDB = require('../repositories/users/initiateDB');
 const getPool = require('./getPool');
+const populateDB = require('./populateDB')
 
 // Nombre, Email, Biografía, Foto, ...
 const initDB = async () => {
@@ -17,28 +19,36 @@ const initDB = async () => {
                 PRIMARY KEY (id)
             )
         `)
+        console.log('Creada Tabla Users...');
+
         await pool.query(`
             CREATE TABLE IF NOT EXISTS folders(
                 id VARCHAR(36) NOT NULL,
-                iduser VARCHAR(36) NOT NULL,
+                id_user VARCHAR(36) NOT NULL,
                 name VARCHAR(50),
                 location VARCHAR(50),
+                creation_date DATE,
                 PRIMARY KEY (id),
-                FOREIGN KEY (iduser) REFERENCES users (id)
+                FOREIGN KEY (id_user) REFERENCES users (id)
             )
         `)
+        console.log('Creada Tabla folders...');
+
         await pool.query(`
             CREATE TABLE IF NOT EXISTS files(
                 id VARCHAR(36) NOT NULL,
-                idfolder VARCHAR(36) NOT NULL,
+                id_folder VARCHAR(36) NOT NULL,
                 name VARCHAR(50),
                 creation_date DATE,
                 PRIMARY KEY (id),
-                FOREIGN KEY (idfolder) REFERENCES folders (id)
+                FOREIGN KEY (id_folder) REFERENCES folders (id)
             )
         `)
-        if (!comp[0].warningStatus) {
-            require('./populateDB')();
+        console.log('Creada Tabla files...');
+
+        const recount = await initiateDB();
+        if (recount.length < 1) {
+            await populateDB();
         }
 
     } catch (error) {
