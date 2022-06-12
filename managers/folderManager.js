@@ -1,5 +1,7 @@
 const { v4 } = require('uuid');
+const deleteFolder = require('../repositories/folder/deleteFolder');
 const insertFolder = require('../repositories/folder/insertFolder');
+const updateFolderNameById = require('../repositories/folder/updateFolderNameById');
 
 /**
  * Crea un folder que agrupara files
@@ -29,6 +31,32 @@ const createFolder = async (idUser, location, name = 'basic folder') => {
 
 }
 
+const renameFolderManager = async (new_name, id_folder) => {
+    try {
+        const folder = await selectFolderById(id_folder)
+        folder.name = new_name
+        await updateFolderNameById(id_folder, new_name)
+        return new_name
+    } catch (err) {
+        console.log('renamefoldermanager');
+        console.log(err);
+        return false
+    }
+}
+
+const deleteFolderManager = async (id_folder) => {
+    try {
+        await deleteFolder(id_folder)
+        return true
+    } catch (err) {
+        console.log('deletefoldermanager');
+        console.log(err);
+        throw err
+    }
+}
+
 module.exports = {
-    createFolder
+    createFolder,
+    renameFolderManager,
+    deleteFolderManager
 }
