@@ -1,5 +1,9 @@
 const downloadFile = async (req, res, next) => {
-    res.status(200).json('Descarga archivo')
+    try {
+        res.status(200).json('download - file')
+    } catch (err) {
+        next(err)
+    }
 }
 
 module.exports = downloadFile

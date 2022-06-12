@@ -1,5 +1,9 @@
 const getFiles = async (req, res, next) => {
-    res.status(200).json('Recoge todos los files de un nivel')
+    try {
+        res.status(200).json('get files')
+    } catch (err) {
+        next(err)
+    }
 }
 
-module.exports = getFiles;
+module.exports = getFiles
