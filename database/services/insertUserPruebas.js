@@ -5,7 +5,7 @@ const insertUserPruebas = async () => {
     try {
         const newUser = {
             id: v4(),
-            name: 'miguel',
+            username: 'miguel',
             password: '1234',
             email: 'miguel.cid.paz@gmail.com',
             biography: 'soy el user de pruebas',
