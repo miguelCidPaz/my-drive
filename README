@@ -22,7 +22,7 @@ Al iniciar el proyecto por primera vez realizara el create de las tablas y
 añadira un usuario de prueba con una carpeta y un archivo de prueba.
 
 Doc de google con documentacion de los endpoints desplegados en la app:
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+https://docs.google.com/document/d/18Ena6lwBZaF0cmLwc4Xn86VDkCXzW4u568hsYR1hDN8/edit?usp=sharing
 
 ENV example :
 PORT=xxxxxxxxx
