@@ -27,7 +27,6 @@ const createFolder = async (idUser, location, name = 'basic folder') => {
     } catch (err) {
         console.log('createFolder');
         console.log(err);
-        return false
     }
 
 }
@@ -41,7 +40,6 @@ const renameFolderManager = async (new_name, id_folder) => {
     } catch (err) {
         console.log('renamefoldermanager');
         console.log(err);
-        return false
     }
 }
 
@@ -52,7 +50,6 @@ const deleteFolderManager = async (id_folder) => {
     } catch (err) {
         console.log('deletefoldermanager');
         console.log(err);
-        throw err
     }
 }
 
@@ -63,7 +60,6 @@ const getAllFoldersByIdUser = async (id_user) => {
     } catch (err) {
         console.log('getallfoldersbyiduser');
         console.log(err);
-        throw err
     }
 }
 
