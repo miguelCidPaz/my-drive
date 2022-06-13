@@ -1,0 +1,406 @@
+{
+	"info": {
+		"_postman_id": "19d3a95d-3446-4e2e-a3e4-865ad42e586f",
+		"name": "my-drive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9701711"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "reconnect",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4ODAxNWVjLWQ3MWEtNDlkZi1iMDlkLTg3NWE4YjNhYjQwNSIsInVzZXJuYW1lIjoibWlndWVsIiwiaWF0IjoxNjU1MDQ5NzQwLCJleHAiOjE2NTU2NTQ1NDB9.hU3PDXBJF6lncpak3gywYoMtrgb_4UEAekh8esEkK_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/my-drive/usr/reconnect",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"usr",
+								"reconnect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifyUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/my-drive/usr/modify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"usr",
+								"modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/cidal/Downloads/images.jpg"
+								},
+								{
+									"key": "username",
+									"value": "miguel",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "miguel@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "biography",
+									"value": "hola a todos wajajajaja",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3003/my-drive/usr/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"usr",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"miguel\",\r\n    \"password\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/my-drive/usr/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"usr",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "folders",
+			"item": [
+				{
+					"name": "create-folder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/my-drive/folder/create-folder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"folder",
+								"create-folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rename-folder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/my-drive/folder/rename",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"folder",
+								"rename"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-folder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/my-drive/folder/delete-folder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"folder",
+								"delete-folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all folders by id_user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg4MGU3ZmJjLTI5NDktNGZhNi1hYmUyLWZjZjZhNDEzMWM4NSIsInVzZXJuYW1lIjoibWlndWVsIiwiaWF0IjoxNjU1MDg3OTM5LCJleHAiOjE2NTU2OTI3Mzl9.YkAQsUNtNVrax2sQyyvhWsFdWf4MbcncNaNie7zpE28",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/my-drive/folder/all-folders/:id_user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"folder",
+								"all-folders",
+								":id_user"
+							],
+							"variable": [
+								{
+									"key": "id_user",
+									"value": "880e7fbc-2949-4fa6-abe2-fcf6a4131c85"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "files",
+			"item": [
+				{
+					"name": "download",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg4MGU3ZmJjLTI5NDktNGZhNi1hYmUyLWZjZjZhNDEzMWM4NSIsInVzZXJuYW1lIjoibWlndWVsIiwiaWF0IjoxNjU1MDg3OTM5LCJleHAiOjE2NTU2OTI3Mzl9.YkAQsUNtNVrax2sQyyvhWsFdWf4MbcncNaNie7zpE28",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/my-drive/files/download/:id_file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"files",
+								"download",
+								":id_file"
+							],
+							"variable": [
+								{
+									"key": "id_file",
+									"value": "a066eb63-a8d1-4254-937d-772f01070696"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all files in folder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg4MGU3ZmJjLTI5NDktNGZhNi1hYmUyLWZjZjZhNDEzMWM4NSIsInVzZXJuYW1lIjoibWlndWVsIiwiaWF0IjoxNjU1MDg3OTM5LCJleHAiOjE2NTU2OTI3Mzl9.YkAQsUNtNVrax2sQyyvhWsFdWf4MbcncNaNie7zpE28",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/my-drive/files/all/:id_folder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"files",
+								"all",
+								":id_folder"
+							],
+							"variable": [
+								{
+									"key": "id_folder",
+									"value": "94d2a174-df3b-4161-9b06-1d056db4c13e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg4MGU3ZmJjLTI5NDktNGZhNi1hYmUyLWZjZjZhNDEzMWM4NSIsInVzZXJuYW1lIjoibWlndWVsIiwiaWF0IjoxNjU1MDg3OTM5LCJleHAiOjE2NTU2OTI3Mzl9.YkAQsUNtNVrax2sQyyvhWsFdWf4MbcncNaNie7zpE28",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/cidal/Downloads/images.jpg"
+								},
+								{
+									"key": "id_folder",
+									"value": "94d2a174-df3b-4161-9b06-1d056db4c13e",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3003/my-drive/files/upload-file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"files",
+								"upload-file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete file",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3003/my-drive/files/delete-folder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"files",
+								"delete-folder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
