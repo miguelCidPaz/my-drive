@@ -1,5 +1,9 @@
 const reconnect = (req, res, next) => {
-    res.status(200).json({ id: req.id, username: req.username })
+    try {
+        res.status(200).json({ id: req.id, username: req.username })
+    } catch (err) {
+        next(err)
+    }
 }
 
 module.exports = reconnect
