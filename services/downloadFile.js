@@ -2,7 +2,7 @@ const fs = require('fs')
 
 const downloadFile = (name_file) => {
     try {
-        return fs.writeFileSync(`./uploads/${name_file}`)
+        return fs.readFileSync(`./uploads/${name_file}`)
     } catch (err) {
         console.log('downloadFile');
         console.log(err);

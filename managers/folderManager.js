@@ -1,6 +1,7 @@
 const { v4 } = require('uuid');
 const deleteFolder = require('../repositories/folder/deleteFolder');
 const insertFolder = require('../repositories/folder/insertFolder');
+const selectAllFoldersByIdUser = require('../repositories/folder/selectAllFoldersByIdUser');
 const updateFolderNameById = require('../repositories/folder/updateFolderNameById');
 
 /**
@@ -55,8 +56,20 @@ const deleteFolderManager = async (id_folder) => {
     }
 }
 
+const getAllFoldersByIdUser = async (id_user) => {
+    try {
+        const folders = await selectAllFoldersByIdUser(id_user);
+        return folders
+    } catch (err) {
+        console.log('getallfoldersbyiduser');
+        console.log(err);
+        throw err
+    }
+}
+
 module.exports = {
     createFolder,
     renameFolderManager,
-    deleteFolderManager
+    deleteFolderManager,
+    getAllFoldersByIdUser
 }
