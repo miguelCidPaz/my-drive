@@ -16,3 +16,19 @@ USUARIOS REGISTRADOS
 ● Crear una carpeta (solo se pueden crear carpetas en la raíz)
 ● Opcional:
     ○ Editar perfil de usuario (Nombre, Email, Biografía, Foto, ...)
+
+
+Al iniciar el proyecto por primera vez realizara el create de las tablas y 
+añadira un usuario de prueba con una carpeta y un archivo de prueba.
+
+Doc de google con documentacion de los endpoints desplegados en la app:
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+ENV example :
+PORT=xxxxxxxxx
+CLAVE_JWT=xxxxxxxxx
+DATABASE_NAME=xxxxxxxxx
+DATABASE_HOST=xxxxxxxxx
+DATABASE_USER=xxxxxxxxx
+DATABASE_PASS=xxxxxxxxx
+DATABASE_PORT=xxxxxxxxx
