@@ -399,6 +399,49 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "move file",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg4MGU3ZmJjLTI5NDktNGZhNi1hYmUyLWZjZjZhNDEzMWM4NSIsInVzZXJuYW1lIjoibWlndWVsIiwiaWF0IjoxNjU1MDg3OTM5LCJleHAiOjE2NTU2OTI3Mzl9.YkAQsUNtNVrax2sQyyvhWsFdWf4MbcncNaNie7zpE28",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_folder\": \" \",\r\n    \"id_file\": \" \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/my-drive/files/move-file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"my-drive",
+								"files",
+								"move-file"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

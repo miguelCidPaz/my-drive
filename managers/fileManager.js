@@ -6,6 +6,7 @@ const removeFile = require('../services/removeFile');
 const renameFile = require('../services/renameFile');
 const selectFilesByIdFolder = require('../repositories/files/selectFilesByIdFolder');
 const deleteFile = require('../repositories/files/deleteFile');
+const updateFile = require('../repositories/files/updateFile');
 
 const uploadFile = async (id_folder, file, id = v4()) => {
     const { originalname, filename } = file
@@ -61,9 +62,19 @@ const deleteFileManager = async ({ id_file, name }) => {
     }
 }
 
+const moveFileManager = async ({ id_folder, id_file }) => {
+    try {
+        await updateFile(id_folder, id_file)
+    } catch (err) {
+        console.log('movefile');
+        console.log(err);
+    }
+}
+
 module.exports = {
     uploadFile,
     downloadFileManager,
     getAllFilesByIdFolder,
-    deleteFileManager
+    deleteFileManager,
+    moveFileManager
 }
