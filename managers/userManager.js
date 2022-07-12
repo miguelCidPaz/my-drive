@@ -65,8 +65,8 @@ const login = async ({ username, password }) => {
             id: user.id,
             username: user.username,
         }
-        console.log(userForToken);
         const token = jwt.sign(userForToken, CLAVE_JWT, { expiresIn: '7d' })
+        console.log(token);
         return user ? { userForToken, token } : false
     } catch (err) {
         console.log('login');

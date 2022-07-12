@@ -42,8 +42,8 @@ const uploadFile = async (id_folder, file, id = v4()) => {
 const downloadFileManager = async (id_file) => {
     const fileDB = await selectFileById(id_file)
     const ext = fileDB.name.split('.')[1]
-    downloadFile(`${id_file}.${ext}`)
-    return fileDB.name
+    const file = downloadFile(`${id_file}.${ext}`)
+    return file
 }
 
 
