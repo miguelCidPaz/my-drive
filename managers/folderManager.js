@@ -23,7 +23,7 @@ const createFolder = async (idUser, location, name = 'basic folder') => {
         }
 
         await insertFolder(newFolder)
-        return id
+        return newFolder
     } catch (err) {
         console.log('createFolder');
         console.log(err);

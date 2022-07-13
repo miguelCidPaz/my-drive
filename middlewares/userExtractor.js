@@ -21,8 +21,8 @@ module.exports = (req, res, next) => {
 
     const { id, username } = decodedToken
 
-    req.id = id
-    req.username = username
+    req.body.id = id
+    req.body.username = username
 
     next();
 }

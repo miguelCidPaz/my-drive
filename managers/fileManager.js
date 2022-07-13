@@ -8,12 +8,12 @@ const selectFilesByIdFolder = require('../repositories/files/selectFilesByIdFold
 const deleteFile = require('../repositories/files/deleteFile');
 const updateFile = require('../repositories/files/updateFile');
 
-const uploadFile = async (id_folder, file, id = v4()) => {
+const uploadFile = async (id_folder, file, id) => {
     try {
         const { originalname, filename } = file
         const ext = originalname.split('.')[1]
 
-        if (!(originalname && filename)) {
+        if (!(originalname)) {
             removeFile(filename)
             const error = new Error('error upload file')
             error.statusCode = 400
@@ -29,7 +29,7 @@ const uploadFile = async (id_folder, file, id = v4()) => {
         await insertFile(newFile)
 
 
-        renameFile(filename, `${id}.${ext}`);
+        renameFile(filename, newFile.name);
 
         return newFile
     } catch (err) {
