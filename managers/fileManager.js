@@ -8,7 +8,8 @@ const selectFilesByIdFolder = require('../repositories/files/selectFilesByIdFold
 const deleteFile = require('../repositories/files/deleteFile');
 const updateFile = require('../repositories/files/updateFile');
 
-const uploadFile = async (id_folder, file, id) => {
+const uploadFile = async (id_folder, file) => {
+    const id = v4();
     try {
         const { originalname, filename } = file
         const ext = originalname.split('.')[1]
@@ -30,6 +31,8 @@ const uploadFile = async (id_folder, file, id) => {
 
 
         renameFile(filename, newFile.name);
+
+        console.log({ newFile });
 
         return newFile
     } catch (err) {
