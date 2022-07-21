@@ -53,7 +53,7 @@ const registerUser = async (file, user) => {
         return { id: newUser.id, username: newUser.username, token: token }
     } catch (err) {
         console.log('registerUser');
-        console.log(err);
+        throw err
     }
 }
 
@@ -61,6 +61,9 @@ const login = async ({ username, password }) => {
 
     try {
         const user = await selectUserByNameAndPassword(username, password)
+        if (user === undefined) {
+            throw new Error('User not found')
+        }
         const userForToken = {
             id: user.id,
             username: user.username,
@@ -70,7 +73,7 @@ const login = async ({ username, password }) => {
         return user ? { userForToken, token } : false
     } catch (err) {
         console.log('login');
-        console.log(err);
+        throw err
     }
 
 }
